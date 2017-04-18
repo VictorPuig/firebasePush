@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "465207568380",
+    "firebase_url": "https://pushnotificationsexample-85dc8.firebaseio.com",
+    "project_id": "pushnotificationsexample-85dc8",
+    "storage_bucket": "pushnotificationsexample-85dc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465207568380:android:d70e4ce66ce38f84",
+        "android_client_info": {
+          "package_name": "victor.firebasemessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465207568380-pns823qt5esdmug9hkaghirqoj0v2t0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP7dVjTCmX5v2MZLfdcIvNTRoWuQyNka4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
