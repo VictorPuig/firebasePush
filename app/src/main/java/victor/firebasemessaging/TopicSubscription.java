@@ -17,6 +17,8 @@ public class TopicSubscription extends BroadcastReceiver implements PushUpdateLi
 
     private static final String TAG = "TopicSubscription";
 
+    // private static Map<String, Integer> topicMap;
+
     String topic;
     PushUpdateListener listener;
 
@@ -30,6 +32,9 @@ public class TopicSubscription extends BroadcastReceiver implements PushUpdateLi
         listener = this;
 
         subscribed = false;
+
+        //if (topicMap == null)
+        //  topicMap = new HashMap<>();
     }
 
     public void setListener(PushUpdateListener listener) {
@@ -44,9 +49,12 @@ public class TopicSubscription extends BroadcastReceiver implements PushUpdateLi
         Log.d(TAG, "Subcribing to firebase topic '" + topic + "'");
         FirebaseMessaging.getInstance().subscribeToTopic(topic);
 
+        //int subscriptions = topicMap.getOrDefault(topic, 0);
+
+        //topicMap.put(topic, subscriptions + 1);
+
         subscribed = true;
 
-        //Registra el receiver per a rebre els intents amb els canvis que envia el firebaseMessagingService
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Constants.packageName + "." + topic);
         ctx.registerReceiver(this, intentFilter);
@@ -55,7 +63,13 @@ public class TopicSubscription extends BroadcastReceiver implements PushUpdateLi
     public void unsubscribe() {
         Log.d(TAG, "Unsubscribing from firebase topic '" + topic + "'");
 
+        // int subscriptions = topicMap.get(topic);
+
+        //topicMap.put(topic, subscriptions - 1);
+
+        //if (topicMap.get(topic) == 0) {
         FirebaseMessaging.getInstance().unsubscribeFromTopic(topic);
+        //}
 
         if (subscribed)
             ctx.unregisterReceiver(this);

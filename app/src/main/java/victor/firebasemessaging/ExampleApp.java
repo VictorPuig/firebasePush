@@ -24,9 +24,9 @@ public class ExampleApp extends Application implements PushUpdateListener {
         super.onCreate();
         sharedPreferences = getSharedPreferences(Constants.PREFERENCES_NAME, MODE_PRIVATE);
 
-        allSubscription = new TopicSubscription(this, "everyone");
+        /*allSubscription = new TopicSubscription(this, "everyone");
         allSubscription.setListener(this);
-        allSubscription.subscribe();
+        allSubscription.subscribe();*/
     }
 
     public SharedPreferences getSharedPreferences() {

@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onPushUpdate(RemoteMessage remoteMessage) {
                 Log.d(TAG, "push recieved");
-                Log.d(TAG, String.valueOf(remoteMessage));
+                Log.d(TAG, remoteMessage.getData().get("message"));
+                textView.setText(remoteMessage.getData().get("message"));
             }
         });
 
@@ -36,6 +37,6 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onPause() {
         super.onPause();
-        topicSubscription.unsubscribe();
+        //topicSubscription.unsubscribe();
     }
 }
